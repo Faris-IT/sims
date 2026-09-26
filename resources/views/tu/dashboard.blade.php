@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <title>Dashboard - SIMS</title>
+    <title>Dashboard TU - SIMS</title>
 
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
 
 <body>
     <main>
-        <h1>Dashboard SIMS</h1>
+        <h1>Dashboard Tata Usaha</h1>
 
         <p>
             Selamat datang, {{ auth()->user()->name }}!
@@ -21,10 +21,6 @@
             Role:
             {{ auth()->user()->role->display_name }}
         </p>
-
-        <a href="{{ route('tu.dashboard') }}">
-            Dashboard Tata Usaha
-        </a>
 
         <form method="POST" action="{{ route('logout') }}">
             @csrf
