@@ -4,6 +4,7 @@ namespace Database\Seeders;
 
 use App\Models\Role;
 use App\Models\User;
+use App\Models\Major;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -77,6 +78,24 @@ class DatabaseSeeder extends Seeder
             'email' => 'siswa@sims.test',
             'password' => Hash::make('Password123!'),
             'role_id' => $siswa->id,
+        ]);
+
+        Major::create([
+            'name' => 'Pengembangan Perangkat Lunak dan Gim',
+            'code' => 'PPLG',
+            'description' => 'Program keahlian pengembangan perangkat lunak dan gim.',
+        ]);
+
+        Major::create([
+            'name' => 'Teknik Jaringan Komputer dan Telekomunikasi',
+            'code' => 'TJKT',
+            'description' => 'Program keahlian jaringan komputer dan telekomunikasi.',
+        ]);
+
+        Major::create([
+            'name' => 'Desain Komunikasi Visual',
+            'code' => 'DKV',
+            'description' => 'Program keahlian desain komunikasi visual.',
         ]);
     }
 }
