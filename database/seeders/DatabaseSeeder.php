@@ -36,11 +36,47 @@ class DatabaseSeeder extends Seeder
             'display_name' => 'Siswa',
         ]);
 
+        $kepalaSekolah = Role::where('name', 'kepala_sekolah')->first();
+
+        $guru = Role::where('name', 'guru')->first();
+
+        $perpustakaan = Role::where('name', 'perpustakaan')->first();
+
+        $siswa = Role::where('name', 'siswa')->first();
+
         User::create([
             'name' => 'Admin SIMS',
             'email' => 'admin@sims.test',
             'password' => Hash::make('Password123!'),
             'role_id' => $tu->id,
+        ]);
+
+        User::create([
+            'name' => 'Kepala Sekolah',
+            'email' => 'kepala@sims.test',
+            'password' => Hash::make('Password123!'),
+            'role_id' => $kepalaSekolah->id,
+        ]);
+
+        User::create([
+            'name' => 'Guru SIMS',
+            'email' => 'guru@sims.test',
+            'password' => Hash::make('Password123!'),
+            'role_id' => $guru->id,
+        ]);
+
+        User::create([
+            'name' => 'Petugas Perpustakaan',
+            'email' => 'perpustakaan@sims.test',
+            'password' => Hash::make('Password123!'),
+            'role_id' => $perpustakaan->id,
+        ]);
+
+        User::create([
+            'name' => 'Siswa SIMS',
+            'email' => 'siswa@sims.test',
+            'password' => Hash::make('Password123!'),
+            'role_id' => $siswa->id,
         ]);
     }
 }
