@@ -6,6 +6,7 @@ use App\Models\Role;
 use App\Models\User;
 use App\Models\Major;
 use App\Models\AcademicYear;
+use App\Models\SchoolClass;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -111,6 +112,39 @@ class DatabaseSeeder extends Seeder
             'start_date' => '2026-07-01',
             'end_date' => '2027-06-30',
             'status' => true,
+        ]);
+
+        $pplg = Major::where('code', 'PPLG')->first();
+        $tjkt = Major::where('code', 'TJKT')->first();
+
+        $academicYear = AcademicYear::where('name', '2026/2027')->first();
+
+        SchoolClass::create([
+            'name' => 'X PPLG 1',
+            'grade' => 'X',
+            'major_id' => $pplg->id,
+            'academic_year_id' => $academicYear->id,
+        ]);
+
+        SchoolClass::create([
+            'name' => 'X PPLG 2',
+            'grade' => 'X',
+            'major_id' => $pplg->id,
+            'academic_year_id' => $academicYear->id,
+        ]);
+
+        SchoolClass::create([
+            'name' => 'XI PPLG 1',
+            'grade' => 'XI',
+            'major_id' => $pplg->id,
+            'academic_year_id' => $academicYear->id,
+        ]);
+
+        SchoolClass::create([
+            'name' => 'X TJKT 1',
+            'grade' => 'X',
+            'major_id' => $tjkt->id,
+            'academic_year_id' => $academicYear->id,
         ]);
     }
 }
