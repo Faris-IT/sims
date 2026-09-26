@@ -5,6 +5,7 @@ namespace Database\Seeders;
 use App\Models\Role;
 use App\Models\User;
 use App\Models\Major;
+use App\Models\AcademicYear;
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\Hash;
 
@@ -96,6 +97,20 @@ class DatabaseSeeder extends Seeder
             'name' => 'Desain Komunikasi Visual',
             'code' => 'DKV',
             'description' => 'Program keahlian desain komunikasi visual.',
+        ]);
+
+        AcademicYear::create([
+            'name' => '2025/2026',
+            'start_date' => '2025-07-01',
+            'end_date' => '2026-06-30',
+            'status' => false,
+        ]);
+
+        AcademicYear::create([
+            'name' => '2026/2027',
+            'start_date' => '2026-07-01',
+            'end_date' => '2027-06-30',
+            'status' => true,
         ]);
     }
 }
