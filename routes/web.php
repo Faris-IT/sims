@@ -1,6 +1,7 @@
 <?php
 
 use App\Http\Controllers\DashboardController;
+use App\Http\Controllers\StudentController;
 use Illuminate\Support\Facades\Route;
 
 Route::get('/', function () {
@@ -30,3 +31,7 @@ Route::get('/perpustakaan', function () {
 Route::get('/siswa', function () {
     return view('siswa.dashboard');
 })->middleware(['auth', 'role:siswa'])->name('siswa.dashboard');
+
+Route::middleware(['auth', 'role:tu,kepala_sekolah'])->group(function () {
+    Route::resource('students', StudentController::class);
+});
